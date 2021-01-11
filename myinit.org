@@ -292,6 +292,7 @@
     (load-theme 'doom-palenight t)
     (doom-themes-visual-bell-config))
 
+
 ;(setq spacemacs-theme-org-height nil)
 ;(custom-set-variables '(spacemacs-theme-custom-colors
 ;                          '((cursor . "#cc5b00")
