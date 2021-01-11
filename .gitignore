@@ -1,0 +1,15 @@
+*~
+eshell/
+elpa/
+transient/
+auto-save-list/
+quelpa/
+myexwm.el
+recentf
+.lsp-session-v1
+.org-id-locations
+diredful-conf.el
+myinit.el
+tramp
+#recentf#
+./#recentf
