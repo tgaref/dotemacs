@@ -11,5 +11,5 @@ recentf
 diredful-conf.el
 myinit.el
 tramp
-#recentf#
-./#recentf
+\#recentf\#
+.\#recentf

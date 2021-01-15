@@ -343,8 +343,8 @@
 
 ;;;;;;;;;;;;;;;;;;;
 
-(use-package smart-mode-line-atom-one-dark-theme
-  :ensure t)
+;(use-package smart-mode-line-atom-one-dark-theme
+;  :ensure t)
 
 
 (use-package smart-mode-line
@@ -358,38 +358,38 @@
         sml/name-width 60)
   (sml/setup))
 
-;(use-package doom-modeline
-;  :ensure t
-;  :init (doom-modeline-mode 1)
-;  :custom
-;    (doom-modeline-height 25)
-;    (doom-modeline-bar-width 6)
-;    (doom-modeline-lsp t)
-;    (doom-modeline-github nil)
-;    (doom-modeline-mu4e nil)
-;    (doom-modeline-irc nil)
-;    (doom-modeline-minor-modes nil)
-;    (doom-modeline-persp-name nil)
-;    (doom-modeline-buffer-file-name-style 'truncate-except-project)
-;    (doom-modeline-icon t)
-;    (doom-modeline-major-mode-icon t)
-;    (doom-modeline-major-mode-color-icon t)
-;    (doom-modeline-buffer-state-icon t))
+(use-package doom-modeline
+  :ensure t
+  :custom
+    (doom-modeline-height 25)
+    (doom-modeline-bar-width 6)
+    (doom-modeline-lsp t)
+    (doom-modeline-github nil)
+    (doom-modeline-mu4e nil)
+    (doom-modeline-irc nil)
+    (doom-modeline-minor-modes nil)
+    (doom-modeline-persp-name nil)
+    (doom-modeline-buffer-file-name-style 'truncate-except-project)
+    (doom-modeline-icon t)
+    (doom-modeline-major-mode-icon t)
+    (doom-modeline-major-mode-color-icon t)
+    (doom-modeline-buffer-state-icon t))
+ (doom-modeline-mode 1)
 ;;;;;;;;;;;;;
 ;(use-package telephone-line
-;  :ensure t
-;  :config 
-;    (setq telephone-line-primary-left-separator 'telephone-line-gradient
+;   :ensure t
+;   :config
+;    (setq telephone-line-primary-left-separator 'telephone-line-flat
 ;          telephone-line-secondary-left-separator 'telephone-line-nil
-;          telephone-line-primary-right-separator 'telephone-line-gradient
-;          telephone-line-secondary-right-separator 'telephone-line-nil)
-;    (setq telephone-line-height 24)
-;  :init (telephone-line-mode 1))
+;          telephone-line-primary-right-separator 'telephone-line-flat
+;          telephone-line-secondary-right-separator 'telephone-line-nil
+;          telephone-line-height 24))
+;(telephone-line-mode 1)
 
 ;;;;;;;;;;;;
-(use-package mood-line
-  :ensure t
-  :init (mood-line-mode))
+;(use-package mood-line
+;  :ensure t
+;  :init (mood-line-mode))
 
 
 #+END_SRC
@@ -709,27 +709,6 @@
  :config
  (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
  #+END_SRC 
-
-* Dashboard
-
-#+BEGIN_SRC emacs-lisp
-(use-package dashboard
-  :ensure t
-  :init
-  (progn
-    (setq dashboard-banner-logo-title "Γειά σου Θεόδουλε!")
-    (setq dashboard-startup-banner 'logo)
-    (setq dashboard-items '((recents  . 5)
-                        (bookmarks . 5)
-                        (agenda . 5)
-                        (registers . 5)))
-    (setq dashboard-set-heading-icons t)      
-    (setq dashboard-set-file-icons t)
-    (setq dashboard-center-content t))    
-  :config (dashboard-setup-startup-hook))
-
-(setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
-#+END_SRC
 
 * Counsel linux app
 

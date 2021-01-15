@@ -3,17 +3,25 @@
 (require 'package)
 
 ;;; Code:
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-
-(require 'package)
-(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
-
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+                         ("melpa-stable" . "https://stable.melpa.org/packages/")
+                         ("org" . "https://orgmode.org/elpa/")
+                         ("elpa" . "https://elpa.gnu.org/packages/")))
 
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
- (package-initialize)
+(package-initialize)
+
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+(blink-cursor-mode 0)
+
+(server-start)
+
+(load "~/.emacs.d/myexwm")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -32,7 +40,6 @@
      (output-dvi "xdvi")
      (output-html "xdg-open")
      (output-pdf "Evince")))
- '(all-the-icons-ivy-buffer-commands '(ivy-switch-buffer-other-window ivy-switch-buffer))
  '(ansi-color-faces-vector
    [default bold shadow italic underline bold bold-italic bold])
  '(ansi-color-names-vector
@@ -161,7 +168,7 @@ static char *gnus-pointer[] = {
    '("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3"))
  '(objed-cursor-color "#dc322f")
  '(package-selected-packages
-   '(smart-mode-line-atom-one-dark-theme smart-mode-line mood-line telephone-line minions exec-path-from-shell which-key lps-ui lsp-clients company-lsp lsp-haskell one-themes tuareg quelpa spaceline-config esh-autosuggest all-the-icons-ibuffer all-the-icons-ivy-rich dashboard cargo toml-mode lsp-ui company spaceline monokai-pro-theme monokai-theme org-bullets powerline spacemacs-theme swiper julia-mode use-package xterm-color julia-repl diredful ivy-rich modus-operandi-theme modus-vivendi-theme pdf-view rg fancy-battery desktop-environment exwm doom-modeline doom-themes alect-themes color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow dired-subtree all-the-icons-dired all-the-icons-ivy all-the-icons monokai-alt-theme god-mode dired-narrow lsp-julia lsp-mode markdown-mode dash-functional flycheck-julia openwith magit racer flycheck-rust rust-mode web-mode dante shell-switcher multi-eshell better-shell dired-ranger ox-reveal org iedit expand-region counsel org-reveal flymake-hlint haskell-mode utop merlin solarized-theme gruvbox-theme color-theme-solarized hc-zenburn-theme auctex racket-mode eterm-256color dired-single slime-company slime spaceline-all-the-icons smart-mode-line-powerline-theme distinguished-theme dakrone-theme badger-theme firecode-theme darkokai-theme atom-one-dark-theme atom-dark-theme afternoon-theme))
+   '(smart-mode-line-atom-one-dark-theme smart-mode-line mood-line telephone-line minions exec-path-from-shell which-key lps-ui lsp-clients company-lsp lsp-haskell one-themes tuareg quelpa spaceline-config esh-autosuggest all-the-icons-ibuffer all-the-icons-ivy-rich cargo toml-mode lsp-ui company spaceline monokai-pro-theme monokai-theme org-bullets powerline spacemacs-theme swiper julia-mode use-package xterm-color julia-repl diredful ivy-rich modus-operandi-theme modus-vivendi-theme pdf-view rg fancy-battery desktop-environment exwm doom-modeline doom-themes alect-themes color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow dired-subtree all-the-icons-dired all-the-icons-ivy all-the-icons monokai-alt-theme god-mode dired-narrow lsp-julia lsp-mode markdown-mode dash-functional flycheck-julia openwith magit racer flycheck-rust rust-mode web-mode dante shell-switcher multi-eshell better-shell dired-ranger ox-reveal org iedit expand-region counsel org-reveal flymake-hlint haskell-mode utop merlin solarized-theme gruvbox-theme color-theme-solarized hc-zenburn-theme auctex racket-mode eterm-256color dired-single slime-company slime spaceline-all-the-icons smart-mode-line-powerline-theme distinguished-theme dakrone-theme badger-theme firecode-theme darkokai-theme atom-one-dark-theme atom-dark-theme afternoon-theme))
  '(pdf-misc-print-programm "/usr/bin/lpr")
  '(pdf-misc-print-programm-args '("-o media=A4"))
  '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e"))
@@ -252,8 +259,10 @@ static char *gnus-pointer[] = {
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 
+
+
 (org-babel-load-file (expand-file-name "~/.emacs.d/myinit.org"))
-(load "~/.emacs.d/myexwm")
+
 (put 'narrow-to-region 'disabled nil)
 
 (provide 'init)

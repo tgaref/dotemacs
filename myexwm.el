@@ -2,28 +2,8 @@
 ;;; Commentary:
 
 ;;; Code:
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
-
-(blink-cursor-mode 0)
 
 (fringe-mode 1)
-
-;; Turn on `display-time-mode' if you don't use an external bar.
-;(setq day-time-default-load-average nil)
-;(display-time-mode t)
-
-;; You are strongly encouraged to enable something like `ido-mode' to alter
-;; the default behavior of 'C-x b', or you will take great pains to switch
-;; to or back from a floating frame (remember 'C-x 5 o' if you refuse this
-;; proposal however).
-;; You may also want to call `exwm-config-ido' later (see below).
-(ido-mode 1)
-
-;; Emacs server is not required to run EXWM but it has some interesting uses
-;; (see next section).
-(server-start)
 
 ;;;; Below are configurations for EXWM.
 
