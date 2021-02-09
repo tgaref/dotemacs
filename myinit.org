@@ -360,6 +360,7 @@
 
 (use-package doom-modeline
   :ensure t
+  :init (doom-modeline-mode 1)
   :custom
     (doom-modeline-height 25)
     (doom-modeline-bar-width 6)
@@ -373,8 +374,11 @@
     (doom-modeline-icon t)
     (doom-modeline-major-mode-icon t)
     (doom-modeline-major-mode-color-icon t)
-    (doom-modeline-buffer-state-icon t))
- (doom-modeline-mode 1)
+    (doom-modeline-buffer-state-icon t)
+    (column-number-mode 1)
+    (doom-modeline-height 1)
+    (set-face-attribute 'mode-line nil :family "Fira Sans" :height 100)
+    (set-face-attribute 'mode-line-inactive nil :family "Fira Sans" :height 100))
 ;;;;;;;;;;;;;
 ;(use-package telephone-line
 ;   :ensure t
@@ -491,7 +495,6 @@
 (require 'julia-repl)
 (setq julia-repl-executable-records
       '((default "~/julia/bin/julia")))
-          
 #+END_SRC
 
 * Flycheck, company, lsp-mode
@@ -777,6 +780,25 @@ This function is meant to be mapped to a key in `rg-mode-map'."
  
  #+END_SRC
 
+* Dashboard
+#+BEGIN_SRC emacs-lisp
+;(use-package dashboard
+;  :ensure t
+;  :init
+;  (progn
+;    (setq dashboard-banner-logo-title "Γειά σου Θεόδουλε!")
+;    (setq dashboard-startup-banner 'logo)
+;    (setq dashboard-items '((recents  . 8)
+;                        (bookmarks . 4)
+;                        (agenda . 3)
+;                        (registers . 5)))
+;    (setq dashboard-set-heading-icons t)      
+;    (setq dashboard-set-file-icons t)
+;    (setq dashboard-center-content t))    
+; :config (dashboard-setup-startup-hook))
+
+;(setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
+#+END_SRC
 * Eterm-256color
 
 #+BEGIN_SRC emacs-lisp
